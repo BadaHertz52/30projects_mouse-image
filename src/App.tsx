@@ -5,7 +5,7 @@ import { cursors } from "./data";
 import { CursorPosition } from "./type";
 
 function App() {
-  const [selectedCursor, setSelectedCursor] = useState<string>("");
+  const [selectedCursor, setSelectedCursor] = useState<string>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
     x: 0,
     y: 0,
@@ -13,16 +13,15 @@ function App() {
   useEffect(() => {}, []);
   return (
     <div className="App">
-      <CursorImg
-        selectedCursor={selectedCursor}
-        cursorPosition={cursorPosition}
-      />
-      <header>버튼을 눌러서 마우스 커서를 바꿔보세요</header>
       {cursors?.map((c) => (
         <CursorBtn
           name={c}
           selected={c === selectedCursor}
           setSelectedCursor={setSelectedCursor}
+      {selectedCursor && (
+        <CursorImg
+          selectedCursor={selectedCursor}
+          cursorPosition={cursorPosition}
         />
       ))}
       <div></div>

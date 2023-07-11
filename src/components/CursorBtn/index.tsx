@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 type CursorBtnProps = {
   name: string;
   selected?: boolean;
-  setSelectedCursor: Dispatch<SetStateAction<string>>;
+  setSelectedCursor: Dispatch<SetStateAction<string | undefined>>;
 };
 function CursorBtn({ name, selected, setSelectedCursor }: CursorBtnProps) {
   const handleClick = () => {
