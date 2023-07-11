@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import CursorImg from "./components/CursorImg";
 import CursorBtn from "./components/CursorBtn";
 import { cursors } from "./data";
 import { CursorPosition } from "./type";
-
+import "./assets/style.scss";
 import classNames from "classnames";
 function App() {
   const [selectedCursor, setSelectedCursor] = useState<string>();
