@@ -11,7 +11,36 @@ function App() {
     x: 0,
     y: 0,
   });
-  useEffect(() => {}, []);
+  let timer: undefined | NodeJS.Timeout;
+  const changeCursorPosition = useCallback((event: MouseEvent) => {
+    if (event) {
+      const { offsetX, offsetY } = event;
+      const target = event.target as HTMLElement | null;
+      if (target) {
+        if (target.className === "App") {
+          setCursorPosition({ x: offsetX, y: offsetY });
+        } else {
+          const domRect = target.getClientRects()[0];
+          setCursorPosition({ x: offsetX + domRect.x, y: offsetY + domRect.y });
+        }
+      }
+    }
+  }, []);
+  const handleMouseMove = (event: MouseEvent) => {
+    const mouseEvent = event;
+    if (!timer) {
+      timer = setTimeout(() => {
+        timer = undefined;
+        changeCursorPosition(mouseEvent);
+      }, 80);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("mousemove", (event) => handleMouseMove(event));
+    return window.removeEventListener("mousemove", (event) =>
+      handleMouseMove(event)
+    );
+  }, [selectedCursor]);
   return (
     <div className={classNames("App", { on: selectedCursor })}>
       {selectedCursor && (
