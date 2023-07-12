@@ -1,6 +1,5 @@
-export type CursorPosition = { x: number; y: number };
-const cursor = "cursor";
-type Cursor = typeof cursor;
-type CursorImgNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+import { CURSOR_IMG_FILES } from "./assets/images";
 
-export type CursorType = `${Cursor}${CursorImgNumber}`;
+export type CursorPosition = { x: number; y: number };
+
+export type CursorType = keyof typeof CURSOR_IMG_FILES;

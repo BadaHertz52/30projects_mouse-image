@@ -1,7 +1,8 @@
 import React, { CSSProperties, useEffect, useState } from "react";
-import { CursorPosition } from "../../type";
+import { CursorPosition, CursorType } from "../../type";
+import Img from "../Img";
 type CursorImgProps = {
-  selectedCursor: string;
+  selectedCursor: CursorType;
   cursorPosition: CursorPosition;
 };
 function CursorImg({ selectedCursor, cursorPosition }: CursorImgProps) {
@@ -15,11 +16,11 @@ function CursorImg({ selectedCursor, cursorPosition }: CursorImgProps) {
   }, [cursorPosition]);
 
   return (
-    <img
+    <Img
       className="cursor-img"
-      src={`/images/${selectedCursor}.png`}
       alt="cursor img"
-      style={style}
+      imgFileName={selectedCursor}
+      imgAttribute={{ style: style }}
     />
   );
 }

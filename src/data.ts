@@ -1,7 +1,6 @@
 import { CursorType } from "./type";
-
 const cursor = "cursor";
-const getCursors = () => {
+const getCursors = (): CursorType[] | undefined => {
   let array: CursorType[] | undefined;
   for (let i = 1; i < 9; i++) {
     const item = `${cursor}${i}` as CursorType;

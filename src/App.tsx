@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CursorPosition } from "./type";
+import { CursorPosition, CursorType } from "./type";
 import "./assets/style.scss";
 import Container from "./components/Container";
 function App() {
-  const [selectedCursor, setSelectedCursor] = useState<string>();
+  const [selectedCursor, setSelectedCursor] = useState<CursorType>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
     x: 0,
     y: 0,
@@ -40,7 +40,6 @@ function App() {
   }, [selectedCursor, handleMouseMove]);
   return (
     <div className="app">
-      <img src="/images/cursor1.png" alt="img" />
       <Container
         selectedCursor={selectedCursor}
         setSelectedCursor={setSelectedCursor}

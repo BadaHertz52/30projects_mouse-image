@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import { Dispatch, SetStateAction } from "react";
-import { CursorPosition } from "../../type";
+import { CursorPosition, CursorType } from "../../type";
 import CursorImg from "../CursorImg";
 import { cursors } from "../../data";
 import CursorBtn from "../CursorBtn";
 
 type ContainerProps = {
-  selectedCursor?: string;
-  setSelectedCursor: Dispatch<SetStateAction<string | undefined>>;
+  selectedCursor?: CursorType;
+  setSelectedCursor: Dispatch<SetStateAction<CursorType | undefined>>;
   cursorPosition: CursorPosition;
 };
 function Container({ ...props }: ContainerProps) {

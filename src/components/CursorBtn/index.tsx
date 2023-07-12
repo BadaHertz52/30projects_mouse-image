@@ -1,8 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
+import { CursorType } from "../../type";
+import Img from "../Img";
 type CursorBtnProps = {
-  name: string;
+  name: CursorType;
   selected?: boolean;
-  setSelectedCursor: Dispatch<SetStateAction<string | undefined>>;
+  setSelectedCursor: Dispatch<SetStateAction<CursorType | undefined>>;
 };
 
 function CursorBtn({ name, selected, setSelectedCursor }: CursorBtnProps) {
@@ -14,7 +16,7 @@ function CursorBtn({ name, selected, setSelectedCursor }: CursorBtnProps) {
       className={`${selected ? "selected" : ""} cursor-btn`}
       onClick={handleClick}
     >
-      <img src={`/images/${name}.png`} alt={`${name} img`} />
+      <Img imgFileName={name} alt={`${name} img`} />
     </button>
   );
 }
