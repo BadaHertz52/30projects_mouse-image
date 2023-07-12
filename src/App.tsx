@@ -29,7 +29,7 @@ function App() {
       timer.current = setTimeout(() => {
         timer.current = undefined;
         changeCursorPosition(mouseEvent);
-      }, 80);
+      }, 50);
     }
   }, []);
   useEffect(() => {
