@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CursorPosition, CursorType } from "./type";
-import "./assets/style.scss";
+import "./assets/styles/style.scss";
+import "./assets/styles/reset.scss";
 import Container from "./components/Container";
 function App() {
   const [selectedCursor, setSelectedCursor] = useState<CursorType>();

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Caprasimo, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$img-size: 60px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  &.on {
+    cursor: none;
+  }
+  & > header {
+    font-family: Caprasimo;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+.btn-group {
+  display: grid;
+  width: calc($img-size * 4 + 30px * 3);
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  &.on {
+    cursor: none;
+  }
+}
+.cursor-btn {
+  border-radius: 10px;
+  background-color: #ffff;
+  border: 3px dashed rgb(159, 158, 158);
+  width: $img-size;
+  height: $img-size;
+  padding: 0;
+  cursor: inherit;
+  &:hover {
+    background-color: #ebe9e9c8;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &.selected {
+    border: 4px solid rgb(70, 70, 70);
+  }
+}
+
+.cursor-img {
+  width: 28px;
+  height: 28px;
+}
