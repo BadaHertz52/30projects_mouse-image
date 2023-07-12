@@ -1,23 +1,20 @@
-import React, { useCallback, useEffect, useState } from "react";
-import CursorImg from "./components/CursorImg";
-import CursorBtn from "./components/CursorBtn";
-import { cursors } from "./data";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CursorPosition } from "./type";
 import "./assets/style.scss";
-import classNames from "classnames";
+import Container from "./components/Container";
 function App() {
   const [selectedCursor, setSelectedCursor] = useState<string>();
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
     x: 0,
     y: 0,
   });
-  let timer: undefined | NodeJS.Timeout;
+  const timer = useRef<undefined | NodeJS.Timeout>();
   const changeCursorPosition = useCallback((event: MouseEvent) => {
     if (event) {
       const { offsetX, offsetY } = event;
       const target = event.target as HTMLElement | null;
       if (target) {
-        if (target.className === "App") {
+        if (target.className === "app") {
           setCursorPosition({ x: offsetX, y: offsetY });
         } else {
           const domRect = target.getClientRects()[0];
@@ -26,42 +23,29 @@ function App() {
       }
     }
   }, []);
-  const handleMouseMove = (event: MouseEvent) => {
+  const handleMouseMove = useCallback((event: MouseEvent) => {
     const mouseEvent = event;
-    if (!timer) {
-      timer = setTimeout(() => {
-        timer = undefined;
+    if (!timer.current) {
+      timer.current = setTimeout(() => {
+        timer.current = undefined;
         changeCursorPosition(mouseEvent);
       }, 80);
     }
-  };
+  }, []);
   useEffect(() => {
     window.addEventListener("mousemove", (event) => handleMouseMove(event));
     return window.removeEventListener("mousemove", (event) =>
       handleMouseMove(event)
     );
-  }, [selectedCursor]);
+  }, [selectedCursor, handleMouseMove]);
   return (
-    <div className={classNames("App", { on: selectedCursor })}>
-      {selectedCursor && (
-        <CursorImg
-          selectedCursor={selectedCursor}
-          cursorPosition={cursorPosition}
-        />
-      )}
-      <header>버튼을 눌러서 마우스 커서를 바꿔보세요</header>
-      <div className={classNames("btn-group", { on: selectedCursor })}>
-        {cursors?.map((c, i) => (
-          <CursorBtn
-            key={`cursorBtn_${i}`}
-            name={c}
-            selected={c === selectedCursor}
-            setSelectedCursor={setSelectedCursor}
-          />
-        ))}
-      </div>
-
-      <div></div>
+    <div className="app">
+      <img src="/images/cursor1.png" alt="img" />
+      <Container
+        selectedCursor={selectedCursor}
+        setSelectedCursor={setSelectedCursor}
+        cursorPosition={cursorPosition}
+      />
     </div>
   );
 }
