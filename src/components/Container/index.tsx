@@ -20,7 +20,7 @@ function Container({ ...props }: ContainerProps) {
           cursorPosition={cursorPosition}
         />
       )}
-      <header>버튼을 눌러서 마우스 커서를 바꿔보세요</header>
+      <header>Select button to change cursor image</header>
       <div className={classNames("btn-group", { on: selectedCursor })}>
         {cursors?.map((c, i) => (
           <CursorBtn
