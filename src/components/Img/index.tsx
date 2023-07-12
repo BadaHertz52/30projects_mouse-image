@@ -12,7 +12,7 @@ type ImgProps = {
 function Img({ className, imgFileName, alt, imgAttribute }: ImgProps) {
   return (
     <img
-      className={classNames({ className: !className })}
+      className={classNames(className)}
       src={CURSOR_IMG_FILES[imgFileName]}
       alt={alt}
       {...imgAttribute}
