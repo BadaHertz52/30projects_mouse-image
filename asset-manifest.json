@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/github.io/30projects_mouse-image/static/css/main.bb974bd6.css",
+    "main.js": "/github.io/30projects_mouse-image/static/js/main.606f7396.js",
+    "static/js/787.86adc5da.chunk.js": "/github.io/30projects_mouse-image/static/js/787.86adc5da.chunk.js",
+    "index.html": "/github.io/30projects_mouse-image/index.html",
+    "main.bb974bd6.css.map": "/github.io/30projects_mouse-image/static/css/main.bb974bd6.css.map",
+    "main.606f7396.js.map": "/github.io/30projects_mouse-image/static/js/main.606f7396.js.map",
+    "787.86adc5da.chunk.js.map": "/github.io/30projects_mouse-image/static/js/787.86adc5da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb974bd6.css",
+    "static/js/main.606f7396.js"
+  ]
+}
