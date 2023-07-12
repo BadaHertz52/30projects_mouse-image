@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { CursorPosition, CursorType } from "../../type";
 import CursorImg from "../CursorImg";
 import { cursors } from "../../data";
@@ -35,4 +35,4 @@ function Container({ ...props }: ContainerProps) {
   );
 }
 
-export default Container;
+export default React.memo(Container);

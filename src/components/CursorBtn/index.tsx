@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { CursorType } from "../../type";
 import Img from "../Img";
 type CursorBtnProps = {
@@ -21,4 +21,4 @@ function CursorBtn({ name, selected, setSelectedCursor }: CursorBtnProps) {
   );
 }
 
-export default CursorBtn;
+export default React.memo(CursorBtn);
