@@ -1,5 +1,5 @@
-import React, { HTMLAttributes, HtmlHTMLAttributes } from "react";
-import { CURSOR_IMG_FILES } from "../../assets/images";
+import React, { HtmlHTMLAttributes } from "react";
+import { CURSOR_IMG_FILES } from "../../data";
 import { CursorType } from "../../type";
 import classNames from "classnames";
 

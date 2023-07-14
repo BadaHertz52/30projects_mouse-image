@@ -1,4 +1,4 @@
-import { CURSOR_IMG_FILES } from "./assets/images";
+import { CURSOR_IMG_FILES } from "./data";
 
 export type CursorPosition = { x: number; y: number };
 

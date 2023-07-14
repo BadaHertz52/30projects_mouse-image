@@ -6,14 +6,13 @@ import cursor5 from "./cursor5.png";
 import cursor6 from "./cursor6.png";
 import cursor7 from "./cursor7.png";
 import cursor8 from "./cursor8.png";
-
-export const CURSOR_IMG_FILES = {
-  cursor1: cursor1,
-  cursor2: cursor2,
-  cursor3: cursor3,
-  cursor4: cursor4,
-  cursor5: cursor5,
-  cursor6: cursor6,
-  cursor7: cursor7,
-  cursor8: cursor8,
+export {
+  cursor1,
+  cursor2,
+  cursor3,
+  cursor4,
+  cursor5,
+  cursor6,
+  cursor7,
+  cursor8,
 };
